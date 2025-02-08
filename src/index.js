@@ -1,13 +1,16 @@
 import express from 'express';
 
+import routes from './routes.js';
+
 const app = express();
 
+//express setup
+app.use(express.static('src/public'));
+app.use(express.urlencoded({extended:false}));
+app.use(routes);
 
-app.use(express.static('src/public'))
+//routes
 
-app.get('/',(req,res)=>{
-    res.send('it works!');
-});
 
 
 
