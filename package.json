@@ -1,0 +1,17 @@
+{
+  "name": "back-end-skeleton",
+  "version": "1.0.0",
+  "description": "Skeleton for Softuni javascript back-end exam",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
