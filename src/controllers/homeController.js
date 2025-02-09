@@ -4,7 +4,7 @@ import { Router } from "express";
 const homeController = Router();
 
 homeController.get('/',(req,res)=>{
-    res.send('it works!');
+    res.render('home', {layout: false});
 });
 
 
