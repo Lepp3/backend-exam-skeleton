@@ -4,11 +4,15 @@ const authController = Router();
 
 
 authController.get('/register', (req,res)=>{
-    res.render('register');
+    res.render('auth/register');
 });
 
 authController.post('/register', async (req,res)=>{
-    //todo implement auth service
+   const userData = req.body;
+
+   console.log(userData);
+
+   res.redirect('/auth/register');
 })
 
 
