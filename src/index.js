@@ -9,14 +9,14 @@ const app = express();
 
 //Db setup
 
-// try{
-//     const uri = 'mongodb://localhost:27017/DBNAME';
-//     await mongoose.connect(uri);
-//     console.log('DB Connected')
-// }catch(err){
-//     console.error('Cannot connect to DB');
-//     console.log(err);
-// }
+try{
+    const uri = 'mongodb://localhost:27017/techStore'; //replace with db name of your choice
+    await mongoose.connect(uri);
+    console.log('DB Connected')
+}catch(err){
+    console.error('Cannot connect to DB');
+    console.log(err);
+}
 
 //handlebars setup
 app.engine('hbs', handlebars.engine({
