@@ -11,11 +11,11 @@ export const authService = {
 
         if(totalUsersWithSameEmail > 0){
             console.log('Email already used');
-            return 
+            return ;
         };
 
         //check if password and repassword match
-        if(userData.password !== userData.rePasssowrd){
+        if(userData.password !== userData.rePassword){
             console.log('Password missmatch! ');
             return;
         }
