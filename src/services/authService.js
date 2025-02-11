@@ -2,6 +2,8 @@ import User from '../models/User.js'
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '../config.js';
+import { generateToken } from '../utils/tokenUtils.js';
+
 
 
 
@@ -20,7 +22,11 @@ export const authService = {
            throw new Error('Password mismatch!');
         }
 
-        return User.create(userData);
+        const createdUser = await User.create(userData);
+
+        const token = generateToken(createdUser);
+
+        return token;
     },
 
     async login(userData){
@@ -36,16 +42,10 @@ export const authService = {
             throw new Error('peerasi');
         };
 
-        const payload = {
-            id: user.id,
-            username: user.username,
-            email: user.email
-        };
-
-        const token = jwt.sign(payload,JWT_SECRET);
-
+       const token = generateToken(user);
+        
         return token;
-
         
     }
+    
 }
