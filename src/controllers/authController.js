@@ -15,6 +15,22 @@ authController.post('/register', async (req,res)=>{
    await authService.register(userData);
 
    res.redirect('/auth/register');
+});
+
+
+authController.get('/login', (req,res)=>{
+    res.render('auth/login');
+});
+
+
+authController.post('/login', async (req,res)=>{
+    const userData = req.body;
+
+    const token = await authService.login(userData);
+
+    res.cookie('auth', token);
+
+    res.redirect('/');
 })
 
 
