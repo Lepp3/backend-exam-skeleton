@@ -21,7 +21,7 @@ authController.post('/register', async (req,res)=>{
     }catch(err){
         const error = getErrorMessage(err);
         
-        return res.render('auth/register', {error: error});
+        return res.render('auth/register', {error: error,userData});
     }
    
 
@@ -45,7 +45,7 @@ authController.post('/login', async (req,res)=>{
     res.redirect('/');
     }catch(err){
         const error = getErrorMessage(err);
-        return res.render('auth/login', {error:error});
+        return res.render('auth/login', {error:error, userData});
     }
 
     
